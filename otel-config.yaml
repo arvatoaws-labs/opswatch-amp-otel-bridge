@@ -11,7 +11,7 @@ receivers:
       - job_name: $JOB_NAME
         scrape_interval: 150s
         honor_labels: true
-        scheme: http
+        scheme: https
         authorization:
           type: Bearer
           credentials: $BEARER
