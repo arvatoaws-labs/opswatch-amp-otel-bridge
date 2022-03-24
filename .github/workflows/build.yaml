@@ -35,5 +35,5 @@ jobs:
           push: true
           pull: true
           tags: ghcr.io/arvatoaws-labs/opswatch-amp-otel-bridge:latest
-          # cache-from: type=registry,ref=ghcr.io/arvatoaws/opswatch-amp-otel-bridge:latest
-          # cache-to: type=inline
+          cache-from: type=registry,ref=ghcr.io/arvatoaws-labs/opswatch-amp-otel-bridge:latest
+          cache-to: type=inline
