@@ -10,11 +10,13 @@ receivers:
       scrape_configs:
       - job_name: $JOB_NAME
         scrape_interval: 150s
+        scrape_timeout: 30s
         honor_labels: true
         scheme: https
-        authorization:
-          type: Bearer
-          credentials: $BEARER
+        oauth2:
+          client_id: $CLIENT_ID
+          client_secret: $CLIENT_SECRET
+          token_url: $TOKEN_URL
         static_configs:
         - targets:
           - $TARGET
