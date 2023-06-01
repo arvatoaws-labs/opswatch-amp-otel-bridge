@@ -1,5 +1,7 @@
 extensions:
   health_check:
+  sigv4auth:
+    region: "$AMP_REGION"
 
 receivers:
   prometheus:
@@ -32,15 +34,14 @@ service:
       receivers:
       - prometheus
       exporters:
-      - awsprometheusremotewrite
+      - prometheusremotewrite
       - logging
-  extensions: [health_check]
+  extensions: [sigv4auth, health_check]
 
 exporters:
   logging:
     loglevel: debug
-  awsprometheusremotewrite:
+  prometheusremotewrite:
     endpoint: "$AMP_ENDPOINT"
-    aws_auth:
-      service: "aps"
-      region: $AMP_REGION
+    auth:
+      authenticator: sigv4auth
