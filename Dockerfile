@@ -1,4 +1,4 @@
-FROM ghcr.io/arvatoaws-labs/fedora:42
+FROM ghcr.io/arvatoaws-labs/fedora:43
 
 RUN dnf install -y gettext
 ADD det-arch.sh /usr/local/bin
